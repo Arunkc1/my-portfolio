@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arun KC | Portfolio</title>
+
+  <!-- Performance: preconnect to common CDNs -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <!-- Preload hero background image for faster first paint -->
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1950&q=80">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- AOS (scroll animations) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Typed.js (hero typing) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Lucide Icons -->
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="logos/sdg.png" type="image/png">
+
+  <!-- Manifest (PWA) -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Open Graph / Twitter Card for SEO/social previews -->
+  <meta property="og:title" content="Arun KC | Portfolio" />
+  <meta property="og:description" content="Graduate Researcher | AI + IoT | Smart Sustainable Systems" />
+  <meta property="og:image" content="certs/sdg-cert.png" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Portfolio of Arun KC - Graduate Researcher | AI, IoT, Smart Sustainable Systems. Explore projects, skills, certifications, and get in touch." />
+
+  <!-- theme color for PWA / mobile UI -->
+  <meta name="theme-color" content="#22d3ee">
+
+  <!-- IMPROVED/EXTRA POLISH: custom styles (directly in the file for all-in-one) -->
+  <style>
+  :root {
+    --sparkle-cyan: #22d3ee;
+    --sparkle-yellow: #ffe066;
+    --sparkle-pink: #f472b6;
+    --sparkle-purple: #a78bfa;
+    --primary-cyan: #22d3ee;
+    --primary-purple: #a78bfa;
+    --primary-yellow: #ffe066;
+    --primary-pink: #f472b6;
+    --primary-green: #22ee88;
+    --neutral-bg-dark: #0f172a;
+    --neutral-bg-light: #f8fafc;
+    --glassy: rgba(15,23,42,0.45);
+  }
+  html { scroll-behavior: smooth; }
+  body { overflow-x: hidden; }
+  .hero-bg {
+  background:
+    linear-gradient(110deg, rgba(34,211,238,0.08) 0%, rgba(167,139,250,0.10) 100%),
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1950&q=80");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+   }
+  .glass {
+    backdrop-filter: blur(10px);
+    background: var(--glassy);
+    border-radius: 1.2rem;
+    border: 1.5px solid var(--primary-cyan);
+    box-shadow: 0 8px 32px 0 var(--primary-cyan)11;
+  }
+  h2 {
+    font-size:1.875rem;
+    font-weight:700;
+    color:var(--primary-cyan);
+    margin-bottom:1.7rem;
+    text-align:center;
+    letter-spacing: 0.01em;
+  }
+  section { padding:6rem 1.5rem;}
+  a, button, .social-link { transition: color .3s, background .3s, transform .3s;}
+  svg path { transition: fill .5s, stroke .5s;}
+  .wave:hover path { fill: var(--primary-cyan); }
+
+  /* Accessible focus styles */
+  :focus-visible { outline: 3px solid var(--primary-cyan); outline-offset: 2px; }
+
+  /* Theme toggle button styles */
+  .theme-toggle-btn {
+    position: fixed;
+    top: 1rem; right: 1rem;
+    z-index: 1002;
+    background: rgba(2,6,23,0.6);
+    color: #e2e8f0;
+    border: 1.5px solid var(--primary-cyan);
+    border-radius: 9999px;
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 4px 14px #22d3ee22;
+  }
+  .theme-toggle-btn:hover, .theme-toggle-btn:focus-visible {
+    background: rgba(34,211,238,0.25);
+    color: #0f172a;
+  }
+  #backToTop {
+    display: none;
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    background: var(--primary-cyan);
+    color: #0f172a;
+    padding: 0.75rem 1rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    box-shadow: 0 0 20px var(--primary-cyan)bb, 0 0 6px #fff4;
+    z-index: 999;
+    cursor: pointer;
+    border: none;
+  }
+  #backToTop:hover {
+    background: #0f172a;
+    color: var(--primary-cyan);
+    box-shadow: 0 0 24px var(--primary-cyan);
+    outline: 2px solid var(--primary-cyan);
+  }
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-12px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+  .animate-fade-down { animation: fadeDown 0.38s cubic-bezier(.47,1.64,.41,.8);}
+  @media (max-width: 540px) {
+    .modal-content { padding: 1.3rem !important; }
+  }
+  .heading-underline {
+    display: inline-block;
+    position: relative;
+    color: var(--primary-cyan);
+    cursor: pointer;
+    background: none;
+  }
+  .heading-underline::after {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 2.5px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, var(--primary-cyan), var(--primary-purple));
+    border-radius: 2px;
+    margin-top: 0.6rem;
+    transition: background 0.3s;
+  }
+  .heading-underline:hover, .heading-underline:focus {
+    background: linear-gradient(90deg, var(--primary-cyan), var(--primary-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  @keyframes borderPulse {
+    0% { box-shadow: 0 0 0 0 var(--primary-cyan)99; }
+    70% { box-shadow: 0 0 0 12px var(--primary-cyan)18; }
+    100% { box-shadow: 0 0 0 0 var(--primary-cyan)99; }
+  }
+  .border-pulse {
+    animation: borderPulse 2.2s infinite cubic-bezier(.47,1.64,.41,.8);
+    border-width: 2.5px;
+    border-style: solid;
+    border-color: var(--primary-cyan);
+    box-shadow: 0 0 0 0 var(--primary-cyan)77;
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, var(--primary-cyan), var(--primary-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .social-link { transition: color 0.3s, transform 0.2s; }
+  .social-link:hover {
+    color: var(--primary-purple) !important;
+    transform: scale(1.22) rotate(-8deg);
+    animation: pulseIcon 0.4s;
+    text-shadow: 0 0 10px var(--primary-purple), 0 0 2px #fff;
+  }
+  @keyframes pulseIcon {
+    0% { transform: scale(1.12) rotate(-8deg);}
+    50% { transform: scale(1.25) rotate(8deg);}
+    100% { transform: scale(1.22) rotate(-8deg);}
+  }
+  .footer-wave { margin-top: -1px; }
+  .sparkle {
+    pointer-events: none;
+    position: absolute;
+    width: 16px; height: 16px;
+    z-index: 50;
+    opacity: 0.85;
+    animation: sparkleMove 1.5s linear infinite;
+    filter: drop-shadow(0 0 6px var(--primary-cyan)) brightness(1.22);
+  }
+  .sparkle.s1 { animation-delay: 0s; }
+  .sparkle.s2 { animation-delay: 0.7s; }
+  .sparkle.s3 { animation-delay: 1.2s; }
+  .sparkle.s4 { animation-delay: 0.3s; }
+  .sparkle.s5 { animation-delay: 1s; }
+  @keyframes sparkleMove {
+    0% { transform: scale(1) rotate(0deg) translateY(0);}
+    50% { transform: scale(1.25) rotate(14deg) translateY(-8px);}
+    100% { transform: scale(1) rotate(0deg) translateY(0);}
+  }
+  .floating-blob { pointer-events: none; opacity: 0.7; }
+  @keyframes spin-slow { 100% { transform: rotate(360deg); } }
+  .animate-spin-slow { animation: spin-slow 18s linear infinite; }
+
+  /* COLOR PICKER BUTTON */
+  .color-picker-btn {
+    background: rgba(34,211,238,0.20);
+    color: #0f172a;
+    border-radius: 999px;
+    border: 2px solid var(--primary-cyan);
+    padding: 0.3rem 1.1rem;
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 1001;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    box-shadow: 0 2px 16px #22d3ee33;
+    outline: none;
+  }
+  .color-picker-btn:hover, .color-picker-btn:focus {
+    background: rgba(34,211,238,0.40);
+    color: #036672;
+    transform: scale(1.09);
+  }
+  .color-dot {
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 50%;
+    border: 2.5px solid #fff;
+    margin-right: 0.4em;
+    box-shadow: 0 0 5px #22d3ee44;
+    cursor: pointer;
+    display: inline-block;
+    transition: border 0.2s, box-shadow 0.22s, transform 0.2s;
+  }
+  .color-dot:hover, .color-dot:focus {
+    border: 2.5px solid var(--primary-purple);
+    box-shadow: 0 0 8px var(--primary-purple)66;
+    transform: scale(1.08);
+  }
+  @media (max-width: 540px) {
+    .color-picker-btn {
+      left: 0.7rem;
+      bottom: 0.7rem;
+      padding: 0.3rem 0.8rem;
+      font-size: 1.05rem;
+    }
+  }
+
+  /* Card Hover Effects */
+  .skill-card, .project-card, .modal-card {
+    transition: transform 0.22s cubic-bezier(.47,1.64,.41,.8), box-shadow 0.22s;
+    background: linear-gradient(120deg, #0f172aef 80%, #334155d0 100%);
+    border-radius: 1.1rem;
+    border: 1.5px solid transparent;
+    box-shadow: 0 2px 16px var(--primary-cyan)11;
+  }
+  .skill-card:hover, .project-card:hover, .modal-card:hover {
+    transform: scale(1.08) translateY(-10px);
+    box-shadow: 0 10px 36px 0 var(--primary-cyan)33, 0 2px 28px var(--primary-purple)22;
+    border-color: var(--primary-cyan);
+    outline: 2px solid var(--primary-purple);
+  }
+  .fade-in {
+    opacity: 0;
+    animation: fadeInUp 1.1s cubic-bezier(.47,1.64,.41,.8) 0.4s forwards;
+  }
+  @keyframes fadeInUp {
+    from { opacity:0; transform:translateY(30px);}
+    to { opacity:1; transform:none;}
+  }
+  body.light {
+    background: var(--neutral-bg-light) !important;
+    color: #1e293b !important;
+  }
+  body.light .glass { background: rgba(255,255,255,0.8) !important; }
+  body.light section { color: #1e293b;}
+  body.light .bg-slate-900 { background: var(--neutral-bg-light) !important; }
+  body.light .bg-slate-800 { background: #e2e8f0 !important; }
+  body.light .bg-slate-700\/70 { background: #e0e7efb0 !important; }
+  body.light .text-slate-100, body.light .text-white { color: #1e293b !important; }
+  body.light .text-cyan-400 { color: var(--primary-cyan) !important; }
+  body.light .border-cyan-400 { border-color: var(--primary-cyan) !important; }
+  body.light .ring-cyan-400 { --tw-ring-color: var(--primary-cyan) !important; }
+  body.light .bg-cyan-400 { background: var(--primary-cyan) !important; color: #fff !important; }
+  body.light .bg-slate-900\/70 { background: rgba(255,255,255,0.8) !important;}
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: linear-gradient(120deg, #0f172aef 80%, #334155d0 100%);
+  }
+  .project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0.27;
+    background: linear-gradient(120deg, var(--primary-cyan) 10%, var(--primary-purple) 90%);
+    filter: blur(25px);
+    transition: opacity 0.3s;
+  }
+  .project-card:hover::before {
+    opacity: 0.5;
+  }
+  .project-card > * { position: relative; z-index: 1; }
+  .cta-animate {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 1.2rem;
+    border: 2.5px solid var(--primary-cyan);
+    background: linear-gradient(90deg, var(--primary-cyan), var(--primary-purple));
+  }
+  .cta-animate::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2.5px solid transparent;
+    background: linear-gradient(90deg, var(--primary-cyan), var(--primary-purple)) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0.82;
+    animation: borderPulse 2.2s infinite cubic-bezier(.47,1.64,.41,.8);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .cta-animate:hover, .cta-animate:focus {
+    box-shadow: 0 0 40px var(--primary-cyan)66, 0 0 14px var(--primary-purple)33;
+    outline: 2.5px solid var(--primary-purple);
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-cyan));
+    color: #fff;
+  }
+  /* Loader spinner */
+  .modal-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 240px;
+  }
+  .loader {
+    border: 4px solid var(--primary-cyan)33;
+    border-top: 4px solid var(--primary-cyan);
+    border-radius: 50%;
+    width: 46px; height: 46px;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+  /* Contact form */
+  .contact-form input,
+  .contact-form textarea {
+    background: #f1f5f9; /* Light gray */
+    color: #1e293b;
+    border: 1.5px solid var(--primary-cyan)55;
+    border-radius: 0.7rem;
+    padding: 0.9rem 1.1rem;
+    width: 100%;
+    margin-bottom: 1.1rem;
+    transition: border 0.22s;
+    font-size: 1rem;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border: 1.5px solid var(--primary-cyan);
+    outline: none;
+  }
+  .contact-form button {
+    background: linear-gradient(90deg, var(--primary-cyan), var(--primary-purple));
+    color: #0f172a;
+    font-weight: bold;
+    border-radius: 0.7rem;
+    padding: 0.7rem 2rem;
+    border: none;
+    box-shadow: 0 0 10px var(--primary-cyan)44;
+    transition: background .22s, color .22s, transform .18s;
+    cursor: pointer;
+  }
+  .contact-form button:hover, .contact-form button:focus {
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-cyan));
+    color: #fff;
+    transform: scale(1.04);
+    outline: 2px solid var(--primary-purple);
+  }
+  .contact-form .form-success {
+    color: var(--primary-cyan);
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  .contact-form .form-error {
+    color: #f87171;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+
+  /* Icon animation for skill/project/modal cards */
+  .skill-card i,
+  .skill-card [data-lucide],
+  .skill-card svg {
+    transition: transform 0.45s cubic-bezier(.47,1.64,.41,.8), color 0.4s, filter 0.4s;
+    will-change: transform, color, filter;
+  }
+  .skill-card:hover i,
+  .skill-card:hover [data-lucide],
+  .skill-card:hover svg {
+    transform: scale(1.25) rotate(-8deg);
+    filter: drop-shadow(0 2px 12px var(--primary-cyan)88) brightness(1.18);
+    color: var(--primary-purple) !important;
+  }
+  .skill-card:hover [data-lucide] svg path,
+  .skill-card:hover svg path {
+    transition: stroke 0.4s, fill 0.4s;
+    stroke: var(--primary-cyan) !important;
+    fill: var(--primary-purple) !important;
+  }
+  @keyframes iconWiggle {
+    0% { transform: scale(1) rotate(0deg);}
+    15% { transform: scale(1.19) rotate(-8deg);}
+    30% { transform: scale(1.14) rotate(6deg);}
+    50% { transform: scale(1.22) rotate(-6deg);}
+    70% { transform: scale(1.13) rotate(4deg);}
+    100% { transform: scale(1) rotate(0deg);}
+  }
+  .skill-card:hover i,
+  .skill-card:hover [data-lucide],
+  .skill-card:hover svg {
+    animation: iconWiggle 0.75s cubic-bezier(.47,1.64,.41,.8);
+    filter: drop-shadow(0 2px 12px var(--primary-cyan)88) brightness(1.19);
+    color: var(--primary-purple) !important;
+  }
+
+  #heroTitle { animation: floatY 5s cubic-bezier(.47,1.64,.41,.8) infinite alternate; }
+  @keyframes floatY { 0%{transform:translateY(0);} 100%{transform:translateY(-8px);} }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute; left: 0; top: 0;
+    transform: translateY(-120%);
+    background: #0f172a; color: #e2e8f0;
+    padding: 0.5rem 0.75rem; border: 2px solid var(--primary-cyan);
+    border-radius: 0 0.5rem 0.5rem 0;
+    z-index: 1003;
+  }
+  .skip-link:focus { transform: translateY(0); }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .animate-bounce { animation: none !important; }
+  }
+
+</style>
+</head>
+<body class="text-slate-100 bg-slate-900 scroll-smooth transition-colors duration-300" id="bodyRoot" data-theme="dark">
+
+<a href="#about" class="skip-link">Skip to main content</a>
+
+<!-- Decorative floating SVG blob (background) -->
+<svg class="floating-blob absolute z-0 left-10 top-1/3 w-44 h-44 opacity-20 animate-spin-slow pointer-events-none" viewBox="0 0 200 200" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="100" rx="95" ry="65" fill="url(#bg1)" />
+</svg>
+<svg class="floating-blob absolute z-0 right-14 bottom-32 w-36 h-36 opacity-15 animate-spin-slow pointer-events-none" viewBox="0 0 200 200" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="100" rx="95" ry="65" fill="url(#bg2)" />
+</svg>
+
+<!-- THEME TOGGLE BUTTON -->
+<button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
+  <i class="fas fa-moon" id="icon-moon" aria-hidden="true"></i>
+  <i class="fas fa-sun hidden" id="icon-sun" aria-hidden="true"></i>
+</button>
+
+<!-- SPARKLES (animated SVGs, position: absolute) -->
+<svg class="sparkle s1" style="top:11vh; left:12vw;" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,2 11,8 18,10 11,12 10,18 9,12 2,10 9,8" fill="var(--sparkle-cyan)" /></svg>
+<svg class="sparkle s2" style="top:21vh; left:87vw;" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,2 13,8 18,10 13,12 10,18 7,12 2,10 7,8" fill="var(--sparkle-yellow)" /></svg>
+<svg class="sparkle s3" style="top:88vh; left:17vw;" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,2 12,9 18,10 12,11 10,18 8,11 2,10 8,9" fill="var(--sparkle-pink)" /></svg>
+<svg class="sparkle s4" style="top:70vh; left:92vw;" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,2 11,7 18,10 11,13 10,18 9,13 2,10 9,7" fill="var(--sparkle-purple)" /></svg>
+<svg class="sparkle s5" style="top:47vh; left:45vw;" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,2 13,9 18,10 13,11 10,18 7,11 2,10 7,9" fill="var(--sparkle-cyan)" /></svg>
+
+<!-- NAVBAR + MOBILE MENU -->
+<header class="fixed inset-x-0 top-0 z-50 glass shadow-xl border-b border-cyan-900/40" role="banner">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between p-4" aria-label="Main navigation">
+    <span class="font-bold tracking-wide text-cyan-400 text-xl">Arun KC</span>
+    <ul class="hidden gap-8 md:flex text-base font-medium">
+      <li><a href="#about" class="hover:text-cyan-400">About</a></li>
+      <li><a href="#skills" class="hover:text-cyan-400">Skills</a></li>
+      <li><a href="#projects" class="hover:text-cyan-400">Projects</a></li>
+      <li><a href="#certs" class="hover:text-cyan-400">Certifications</a></li>
+      <li><a href="#contact" class="hover:text-cyan-400">Contact</a></li>
+    </ul>
+    <button id="menuToggle" onclick="toggleMenu()" class="text-cyan-400 text-2xl md:hidden focus:outline-none" aria-label="Toggle Menu" aria-controls="mobileMenu" aria-expanded="false">
+      <i id="icon-bars" class="fas fa-bars" aria-hidden="true"></i>
+      <i id="icon-close" class="fas fa-times hidden" aria-hidden="true"></i>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden px-6 pt-4 pb-6 bg-slate-800/90 glass animate-fade-down" aria-label="Mobile menu">
+    <ul class="space-y-4 text-center text-lg font-semibold">
+      <li><a href="#about" class="block hover:text-cyan-400" onclick="toggleMenu()">About</a></li>
+      <li><a href="#skills" class="block hover:text-cyan-400" onclick="toggleMenu()">Skills</a></li>
+      <li><a href="#projects" class="block hover:text-cyan-400" onclick="toggleMenu()">Projects</a></li>
+      <li><a href="#certs" class="block hover:text-cyan-400" onclick="toggleMenu()">Certifications</a></li>
+      <li><a href="#contact" class="block hover:text-cyan-400" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero-bg relative flex h-screen items-center justify-center text-center px-6 overflow-hidden">
+  <div class="absolute inset-0 bg-slate-900/75"></div>
+  <div class="relative z-10 text-center px-6 pb-32 max-w-3xl mx-auto">
+    <h1 id="heroTitle"
+        class="border-4 border-cyan-400
+               rounded-3xl px-6 py-3
+               text-4xl md:text-6xl font-extrabold mb-3 text-white bg-slate-900/70
+               shadow-xl transition-all duration-500 ease-in-out
+               opacity-0 border-pulse">
+      Hello, I'm <span class="gradient-text">Arun KC</span>
+    </h1>
+    <h2 class="heading-underline text-center text-2xl md:text-3xl font-bold text-cyan-300 mb-6 opacity-0 animate__animated animate__fadeIn animate__delay-1s animate__faster animate__once animate__slow" id="subtitle">
+      <span id="typed"></span>
+    </h2>
+    <p class="mb-8 text-base text-slate-300 animate__animated animate__fadeInUp animate__delay-2s">
+      Graduate Researcher • AI | IoT | Smart Sustainable Systems
+    </p>
+    <a href="#projects"
+       class="cta-animate inline-block rounded-lg bg-cyan-400 px-8 py-3 font-semibold text-slate-900 shadow-xl transition hover:ring-cyan-300 hover:scale-110 animate__animated animate__pulse animate__infinite" aria-label="Jump to Projects">
+      Explore Projects
+    </a>
+  </div>
+  <a href="#projects" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center group z-20" aria-label="Scroll down to Projects">
+    <div class="flex flex-col items-center text-cyan-400 animate-bounce text-2xl">
+      <i class="fas fa-chevron-down drop-shadow-[0_0_10px_#22d3ee]" aria-hidden="true"></i>
+      <span class="text-base mt-1 opacity-80 drop-shadow-[0_0_6px_#22d3ee]">Scroll down</span>
+    </div>
+  </a>
+</section>
+
+<section id="about" class="bg-slate-900" data-aos="fade-up">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="heading-underline">About Me</h2>
+    <p class="text-slate-300 leading-relaxed text-lg md:text-xl fade-in">
+      I’m a Graduate Researcher passionate about integrating <span class="text-cyan-400 font-semibold">AI</span>, <span class="text-cyan-400 font-semibold">IoT</span>, and <span class="text-cyan-400 font-semibold">Sustainable Systems</span>.<br>
+      I build AI-powered digital twins, smart dashboards, and data-driven solutions for a smarter, greener world.<br>
+      My portfolio is a reflection of my journey in crafting intelligent, future-ready technologies.
+    </p>
+  </div>
+</section>
+<div class="relative -mt-1"><svg viewBox="0 0 1440 100" aria-hidden="true"><path fill="#1e293b" d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z"></path></svg></div>
+
+<!-- Skills & Tech -->
+<section id="skills" class="py-16 bg-gray-950 text-white" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="heading-underline text-3xl sm:text-4xl font-bold mb-8">🛠️ Skills & Tech</h2>
+    </div>
+    <!-- Technical Skills -->
+    <div class="mb-12">
+      <h3 class="text-2xl font-semibold mb-6 text-teal-400 flex items-center gap-2">
+        <i data-lucide="code" class="w-6 h-6 text-teal-400"></i>
+        Technical Skills
+      </h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6 text-sm sm:text-base">
+        <div class="bg-gray-800 rounded-2xl p-5 text-center cursor-pointer hover:scale-105 transition-transform duration-300 skill-card flex flex-col items-center">
+          <i class="fa-brands fa-python mb-3 text-yellow-400" style="font-size: 1.75rem;"></i>
+          <span>Python</span>
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-5 text-center cursor-pointer hover:scale-105 transition-transform duration-300 skill-card">
+          <i data-lucide="brain-cog" class="mx-auto mb-3 w-7 h-7 text-pink-400"></i>
+          Machine Learning
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-5 text-center cursor-pointer hover:scale-105 transition-transform duration-300 skill-card">
+          <i data-lucide="radio" class="mx-auto mb-3 w-7 h-7 text-blue-400"></i>
+          IoT Simulations
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-5 text-center cursor-pointer hover:scale-105 transition-transform duration-300 skill-card">
+          <i data-lucide="monitor" class="mx-auto mb-3 w-7 h-7 text-cyan-400"></i>
+          Streamlit
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-5 text-center cursor-pointer hover:scale-105 transition-transform duration-300 skill-card flex flex-col items-center">
+          <i class="fa-brands fa-github mb-3 text-cyan-400" style="font-size: 1.75rem;"></i>
+          <span>Git & GitHub</span>
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-5 text-center cursor-pointer hover:scale-105 transition-transform duration-300 skill-card">
+          <i data-lucide="bar-chart" class="mx-auto mb-3 w-7 h-7 text-green-400"></i>
+          Data Viz
+        </div>
+      </div>
+    </div>
+    <!-- Domain Expertise -->
+    <div>
+      <h3 class="text-2xl font-semibold mb-6 text-green-400 flex items-center gap-2">
+        <i data-lucide="globe" class="w-6 h-6 text-green-400"></i>
+        Domain Expertise
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm sm:text-base">
+        <div class="bg-gray-800 rounded-2xl p-5 text-center cursor-pointer hover:scale-105 transition-transform duration-300 skill-card">
+          <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-3" width="28" height="28" viewBox="0 0 32 32" fill="none" style="display:block;">
+            <circle cx="16" cy="16" r="14" stroke="#a78bfa" stroke-width="2" fill="none"/>
+            <ellipse cx="16" cy="16" rx="9" ry="14" stroke="#38bdf8" stroke-width="2" fill="none"/>
+            <ellipse cx="16" cy="16" rx="14" ry="6" stroke="#22d3ee" stroke-width="2" fill="none"/>
+            <circle cx="16" cy="16" r="3" fill="#a78bfa"/>
+          </svg>
+          Digital Twins & Smart Systems
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-5 text-center cursor-pointer hover:scale-105 transition-transform duration-300 skill-card">
+          <i data-lucide="zap" class="mx-auto mb-3 w-7 h-7 text-yellow-300"></i>
+          AI for Sustainable Resource Management
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-5 text-center cursor-pointer hover:scale-105 transition-transform duration-300 skill-card">
+          <i data-lucide="rss" class="mx-auto mb-3 w-7 h-7 text-pink-300"></i>
+          IoT-Enabled Optimization
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="relative -mt-1"><svg viewBox="0 0 1440 100" aria-hidden="true"><path fill="#0f172a" d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z"></path></svg></div>
+
+<!-- PROJECTS -->
+<section id="projects" class="bg-slate-900" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex justify-center">
+      <h2 class="heading-underline text-center text-4xl font-bold text-cyan-400 mb-10 w-full" style="max-width:max-content;">Featured Projects</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 mt-8">
+      <div class="project-card glass p-8 rounded-xl shadow-xl cursor-pointer border-2 border-cyan-400/70 hover:border-cyan-300 hover:ring-4 hover:ring-cyan-400/40 hover:scale-105 hover:shadow-[0_0_38px_#22d3ee99] transition relative group backdrop-blur-lg bg-gradient-to-br from-slate-800/60 to-slate-700/50">
+        <span class="absolute top-4 right-6 text-cyan-300 text-xl opacity-60 group-hover:opacity-90"><i class="fas fa-bolt"></i></span>
+        <h3 class="text-xl font-semibold mb-2">AI-Powered IoT Twin</h3>
+        <p class="text-slate-200/90 mb-2">Forecasts energy, CO₂, comfort & water usage to enable proactive, data-driven building management.</p>
+        <a href="https://github.com/Arunkc1/smart_building_twin" class="text-cyan-400 underline mr-4" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://smartbuildingtwin.streamlit.app/" class="text-cyan-400 underline" target="_blank" rel="noopener">Live Demo</a>
+      </div>
+      <div class="project-card glass p-8 rounded-xl shadow-xl cursor-pointer border-2 border-cyan-400/70 hover:border-cyan-300 hover:ring-4 hover:ring-cyan-400/40 hover:scale-105 hover:shadow-[0_0_38px_#22d3ee99] transition relative group backdrop-blur-lg bg-gradient-to-br from-slate-800/60 to-slate-700/50">
+        <span class="absolute top-4 right-6 text-cyan-300 text-xl opacity-60 group-hover:opacity-90"><i class="fas fa-tint"></i></span>
+        <h3 class="text-xl font-semibold mb-2">Building Energy Demand Forecasting</h3>
+        <p class="text-slate-200/90 mb-2">Benchmarks machine-learning models on real building datasets to evaluate accuracy, robustness, and generalization.</p>
+        <a href="https://github.com/Arunkc1/building-energy-forecasting-ml.git" class="text-cyan-400 underline mr-4" target="_blank" rel="noopener">Github</a>
+        <a href="https://your-streamlit-water-demo" class="text-cyan-400 underline" target="_blank" rel="noopener"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs" class="bg-slate-800" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex justify-center">
+      <h2 class="heading-underline text-center text-4xl font-bold text-cyan-400 mb-10 w-full" style="max-width:max-content;">Certifications</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 text-center mt-8">
+      <!-- Card 1 -->
+      <div onclick="openModal('cert1')" class="modal-card bg-slate-700/70 p-6 rounded-lg shadow-lg cursor-pointer hover:scale-110 hover:ring-2 hover:ring-cyan-400 hover:shadow-[0_0_18px_#22d3ee] hover:animate-pulse transition group">
+  <img src="logos/harvardx.png" alt="HarvardX" class="h-12 mx-auto mb-4 drop-shadow-lg" loading="lazy">
+        <p class="font-semibold text-base">ML & AI with Python</p>
+        <p class="text-xs text-slate-300 mt-2">HarvardX</p>
+      </div>
+      <!-- Card 2 -->
+      <div onclick="openModal('cert2')" class="modal-card bg-slate-700/70 p-6 rounded-lg shadow-lg cursor-pointer hover:scale-110 hover:ring-2 hover:ring-cyan-400 hover:shadow-[0_0_18px_#22d3ee] hover:animate-pulse transition group">
+  <img src="logos/sdg.png" alt="SDG Academy" class="h-12 mx-auto mb-4 bg-white rounded p-1 drop-shadow-lg" loading="lazy">
+        <p class="font-semibold text-base">Age of Sustainable Development</p>
+        <p class="text-xs text-slate-300 mt-2">SDG Academy</p>
+      </div>
+      <!-- Card 3 -->
+      <div onclick="openModal('cert3')" class="modal-card bg-slate-700/70 p-6 rounded-lg shadow-lg cursor-pointer hover:scale-110 hover:ring-2 hover:ring-cyan-400 hover:shadow-[0_0_18px_#22d3ee] hover:animate-pulse transition group">
+  <img src="logos/STAN.png" alt="Stanford" class="h-10 mx-auto mb-4 drop-shadow-lg" loading="lazy">
+        <p class="font-semibold text-base">Supervised ML: Regression and Classification</p>
+        <p class="text-xs text-slate-300 mt-2">Stanford</p>
+      </div>
+      <!-- Card 4 -->
+      <div onclick="openModal('cert4')" class="modal-card bg-slate-700/70 p-6 rounded-lg shadow-lg cursor-pointer hover:scale-110 hover:ring-2 hover:ring-cyan-400 hover:shadow-[0_0_18px_#22d3ee] hover:animate-pulse transition group">
+  <img src="logos/UCL.png" alt="UCL" class="h-12 mx-auto mb-4 drop-shadow-lg" loading="lazy">
+        <p class="font-semibold text-base">IOT and Embeded Systems</p>
+        <p class="text-xs text-slate-300 mt-2">UCL</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section with Accessible Contact Form (HIDDEN IN BUTTON) -->
+<section id="contact" class="bg-slate-900" data-aos="fade-up">
+  <div class="max-w-xl mx-auto text-center">
+    <h2 class="heading-underline">Get in Touch</h2>
+    <p class="mb-8 text-base">Open to research collaborations, smart-system projects & coffee chats!</p>
+    <!-- Contact Button triggers form modal -->
+    <button
+      id="showContactFormBtn"
+      class="inline-block px-6 py-2 border border-cyan-400 rounded-full text-cyan-300 hover:bg-cyan-400 hover:text-slate-900 transition font-semibold shadow-lg"
+      aria-label="Open Contact Form"
+      type="button"
+    >
+      Contact Me
+    </button>
+    <!-- HIDDEN FORM MODAL -->
+    <div id="contactFormModal" class="modal-bg hidden fixed inset-0 z-[2000] bg-black/50 flex items-center justify-center">
+      <div class="bg-slate-800 rounded-xl shadow-2xl p-8 max-w-md w-full modal-content relative text-center">
+        <button onclick="closeContactForm()" class="absolute top-3 right-4 text-cyan-400 text-xl" aria-label="Close"><i class="fas fa-times"></i></button>
+        <form class="contact-form mx-auto" style="max-width: 360px;" action="https://formspree.io/f/mblyqaja" method="POST" aria-label="Contact Form">
+          <label for="name" class="sr-only">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name" aria-label="Your Name">
+          <label for="email" class="sr-only">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email" aria-label="Your Email">
+          <label for="message" class="sr-only">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="How can I help you?" required aria-label="Type your message"></textarea>
+          <button type="submit">Send Message</button>
+          <div id="formStatus" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+    <div class="flex justify-center gap-8 text-3xl mb-6 mt-10">
+      <a href="https://github.com/Arunkc1" target="_blank" class="hover:text-cyan-400 social-link" aria-label="GitHub" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourlinkedin" target="_blank" class="hover:text-cyan-400 social-link" aria-label="LinkedIn" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:akc5556@gmail.com" class="hover:text-cyan-400 social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <a href="your-resume.pdf" target="_blank" class="inline-block px-6 py-2 border border-cyan-400 rounded-full text-cyan-300 hover:bg-cyan-400 hover:text-slate-900 transition font-semibold shadow-lg" rel="noopener" aria-label="View Resume">
+      View Resume
+    </a>
+  </div>
+</section>
+
+<div class="footer-wave relative -mt-1"><svg viewBox="0 0 1440 100" aria-hidden="true"><path fill="#1e293b" d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z"></path></svg></div>
+
+<footer class="py-5 text-center bg-slate-900 text-sm text-slate-400 border-t border-cyan-900/30 flex flex-col items-center gap-2">
+  <div>© 2025 Arun KC. All rights reserved.</div>
+  <button id="backToTop" onclick="scrollToTop()" title="Back to Top" aria-label="Back to top"
+    class="animate-bounce bg-cyan-400 text-slate-900 px-4 py-2 rounded-full mt-2 shadow-lg hover:bg-cyan-500 transition">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</footer>
+
+<!-- CERTIFICATE MODALS (add your cert images in certs/ folder) -->
+<div id="cert1" class="modal-bg hidden fixed inset-0 z-[2000] bg-black/50 flex items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="cert1Title">
+  <div class="bg-slate-800 rounded-xl shadow-2xl p-8 max-w-md w-full modal-content relative text-center">
+    <button onclick="closeModal('cert1')" class="absolute top-3 right-4 text-cyan-400 text-xl" aria-label="Close"><i class="fas fa-times"></i></button>
+  <img src="logos/harvardx.png" alt="HarvardX" class="h-16 mx-auto mb-4" loading="lazy">
+    <h3 id="cert1Title" class="text-xl font-bold mb-2 text-cyan-300">ML & AI with Python</h3>
+    <p class="mb-2">Institution: HarvardX</p>
+  <img src="certs/AI.png" alt="ML & AI with Python Certificate" class="w-full rounded-lg shadow mb-2" loading="lazy">
+    <a href="certs/AI.png" target="_blank" class="text-cyan-400 underline">View Certificate</a>
+  </div>
+</div>
+<div id="cert2" class="modal-bg hidden fixed inset-0 z-[2000] bg-black/50 flex items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="cert2Title">
+  <div class="bg-slate-800 rounded-xl shadow-2xl p-8 max-w-md w-full modal-content relative text-center">
+    <button onclick="closeModal('cert2')" class="absolute top-3 right-4 text-cyan-400 text-xl" aria-label="Close"><i class="fas fa-times"></i></button>
+  <img src="logos/sdg.png" alt="SDG Academy" class="h-16 mx-auto mb-4 bg-white rounded p-1" loading="lazy">
+    <h3 id="cert2Title" class="text-xl font-bold mb-2 text-cyan-300">Age of Sustainable Development</h3>
+    <p class="mb-2">Institution: SDG Academy</p>
+  <img src="certs/sdg-cert.png" alt="SDG Academy Certificate" class="w-full rounded-lg shadow mb-2" loading="lazy">
+    <a href="certs/sdg-cert.png" target="_blank" class="text-cyan-400 underline">View Certificate</a>
+  </div>
+</div>
+<div id="cert3" class="modal-bg hidden fixed inset-0 z-[2000] bg-black/50 flex items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="cert3Title">
+  <div class="bg-slate-800 rounded-xl shadow-2xl p-8 max-w-md w-full modal-content relative text-center">
+    <button onclick="closeModal('cert3')" class="absolute top-3 right-4 text-cyan-400 text-xl" aria-label="Close"><i class="fas fa-times"></i></button>
+  <img src="logos/STAN.png" alt="Stanford" class="h-14 mx-auto mb-4" loading="lazy">
+    <h3 id="cert3Title" class="text-xl font-bold mb-2 text-cyan-300">Supervised ML: Regression and Classification</h3>
+    <p class="mb-2">Institution: Stanford</p>
+  <img src="certs/ML.png" alt="Stanford Certificate" class="w-full rounded-lg shadow mb-2" loading="lazy">
+    <a href="certs/ML.png" target="_blank" class="text-cyan-400 underline">View Certificate</a>
+  </div>
+</div>
+<div id="cert4" class="modal-bg hidden fixed inset-0 z-[2000] bg-black/50 flex items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="cert4Title">
+  <div class="bg-slate-800 rounded-xl shadow-2xl p-8 max-w-md w-full modal-content relative text-center">
+    <button onclick="closeModal('cert4')" class="absolute top-3 right-4 text-cyan-400 text-xl" aria-label="Close"><i class="fas fa-times"></i></button>
+  <img src="logos/UCL.png" alt="UCL" class="h-16 mx-auto mb-4" loading="lazy">
+    <h3 id="cert4Title" class="text-xl font-bold mb-2 text-cyan-300">IOT and Embeded Systems</h3>
+    <p class="mb-2">Institution: University of California</p>
+  <img src="certs/IOT.png" alt="UCL Certificate" class="w-full rounded-lg shadow mb-2" loading="lazy">
+    <a href="certs/IOT.png" target="_blank" class="text-cyan-400 underline">View Certificate</a>
+  </div>
+</div>
+
+<!-- Removed duplicate Back to Top button (keep footer one) -->
+
+<!-- Loader Modal (hidden by default, show when loading) -->
+<div id="modalLoader" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);" aria-modal="true" aria-label="Loading">
+  <div class="modal-loader"><div class="loader"></div></div>
+</div>
+
+<!-- Google Analytics 4 (replace G-XXXXXXX with your ID) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXX');
+</script>
+
+<!-- Register service worker for PWA -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js');
+    });
+  }
+</script>
+
+<!-- JS LIBRARIES -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Lucide icons (guard against defer race)
+  if (window.lucide && typeof lucide.createIcons === 'function') {
+    lucide.createIcons();
+  } else {
+    window.addEventListener('load', () => {
+      if (window.lucide && typeof lucide.createIcons === 'function') {
+        lucide.createIcons();
+      }
+    });
+  }
+
+  // THEME TOGGLE
+  const themeBtn = document.getElementById('themeToggle');
+  const iconMoon = document.getElementById('icon-moon');
+  const iconSun = document.getElementById('icon-sun');
+  const body = document.body;
+
+  function setTheme(theme) {
+    if (theme === "light") {
+      body.classList.add("light");
+      iconMoon.classList.add("hidden");
+      iconSun.classList.remove("hidden");
+    } else {
+      body.classList.remove("light");
+      iconMoon.classList.remove("hidden");
+      iconSun.classList.add("hidden");
+    }
+    localStorage.setItem("theme", theme);
+  }
+
+  // Initialize theme on load
+  let savedTheme = localStorage.getItem("theme");
+  if (!savedTheme) {
+    savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+  }
+  setTheme(savedTheme);
+
+  themeBtn.onclick = function() {
+    setTheme(body.classList.contains("light") ? "dark" : "light");
+  };
+
+  // AOS & Typed.js init
+  AOS.init({ once: true, duration: 900, offset: 120 });
+
+  setTimeout(() => {
+    const h1 = document.getElementById("heroTitle");
+    h1.classList.remove("opacity-0");
+    h1.classList.add("animate__animated", "animate__zoomIn", "animate__duration-1000");
+  }, 200);
+
+  setTimeout(() => {
+    document.getElementById("subtitle").classList.remove("opacity-0");
+    if (window.Typed) {
+      new Typed("#typed", {
+      strings: [
+        "AI + IoT Developer for Smart Systems",
+        "I Create AI-Powered Digital Twins",
+        "I Design Smart Sustainable Solutions"
+      ],
+      typeSpeed: 40,
+      backSpeed: 20,
+      backDelay: 1500,
+      loop: true
+      });
+    }
+  }, 1200);
+
+  // Modal helpers with focus trapping
+  let lastFocusedEl = null;
+  let activeTrapCleanup = null;
+
+  function trapFocus(modal) {
+    const selectors = [
+      'a[href]', 'button:not([disabled])', 'textarea', 'input', 'select', '[tabindex]:not([tabindex="-1"])'
+    ];
+    const focusable = Array.from(modal.querySelectorAll(selectors.join(',')))
+      .filter(el => el.offsetParent !== null);
+    if (focusable.length) focusable[0].focus();
+    function handleKey(e) {
+      if (e.key !== 'Tab') return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+    modal.addEventListener('keydown', handleKey);
+    return () => modal.removeEventListener('keydown', handleKey);
+  }
+
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    lastFocusedEl = document.activeElement;
+    modal.classList.remove("hidden");
+    document.body.classList.add('overflow-y-hidden');
+    activeTrapCleanup = trapFocus(modal);
+  }
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.add("hidden");
+    document.body.classList.remove('overflow-y-hidden');
+    if (activeTrapCleanup) { activeTrapCleanup(); activeTrapCleanup = null; }
+    if (lastFocusedEl) { lastFocusedEl.focus(); lastFocusedEl = null; }
+  }
+
+  // Contact form modal handlers
+  const showContactFormBtn = document.getElementById('showContactFormBtn');
+  const contactFormModal = document.getElementById('contactFormModal');
+  function openContactForm() {
+    lastFocusedEl = document.activeElement;
+    contactFormModal.classList.remove('hidden');
+    document.body.classList.add('overflow-y-hidden');
+    activeTrapCleanup = trapFocus(contactFormModal);
+  }
+  function closeContactForm() {
+    contactFormModal.classList.add('hidden');
+    document.body.classList.remove('overflow-y-hidden');
+    if (activeTrapCleanup) { activeTrapCleanup(); activeTrapCleanup = null; }
+    if (lastFocusedEl) { lastFocusedEl.focus(); lastFocusedEl = null; }
+  }
+  showContactFormBtn.addEventListener('click', openContactForm);
+
+  // Close modal on Esc key
+  document.addEventListener("keydown", function(evt) {
+    if (evt.key === "Escape") {
+      document.querySelectorAll(".modal-bg").forEach(el => el.classList.add("hidden"));
+      document.body.classList.remove('overflow-y-hidden');
+    }
+  });
+
+  // Close modal when clicking backdrop
+  document.querySelectorAll('.modal-bg').forEach(bg => {
+    bg.addEventListener('click', (e) => {
+      if (e.target === bg) {
+        bg.classList.add('hidden');
+        document.body.classList.remove('overflow-y-hidden');
+        if (activeTrapCleanup) { activeTrapCleanup(); activeTrapCleanup = null; }
+        if (lastFocusedEl) { lastFocusedEl.focus(); lastFocusedEl = null; }
+      }
+    });
+  });
+
+  // Mobile menu toggle (hamburger animation)
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const iconBars = document.getElementById('icon-bars');
+    const iconClose = document.getElementById('icon-close');
+    const btn = document.getElementById('menuToggle');
+    menu.classList.toggle('hidden');
+    iconBars.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+    document.body.classList.toggle('overflow-y-hidden');
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', (!expanded).toString());
+  }
+
+  // Back-to-top visibility
+  window.addEventListener("scroll", () => {
+    document.getElementById("backToTop").style.display =
+      window.scrollY > 300 ? "block" : "none";
+  });
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      document.querySelectorAll('.fade-in').forEach(function(el){
+        el.style.opacity = 1;
+        el.style.animation = 'fadeInUp 1.1s ease-in-out 0.2s forwards';
+      });
+    }, 400);
+  });
+
+  // Mouse parallax for sparkles and blobs
+  document.addEventListener('mousemove', (e) => {
+    document.querySelectorAll('.sparkle, .floating-blob').forEach((el, i) => {
+      const speed = 0.6 + i * 0.05;
+      const x = (window.innerWidth / 2 - e.clientX) * speed / 90;
+      const y = (window.innerHeight / 2 - e.clientY) * speed / 90;
+      el.style.transform = `translate(${x}px, ${y}px)` + (el.classList.contains('animate-spin-slow') ? ' rotate(0deg)' : '');
+    });
+  });
+
+  // Contact form AJAX (for Formspree)
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const status = document.getElementById('formStatus');
+  document.getElementById('modalLoader').style.display = 'block';
+  status.textContent = '';
+  try {
+    const data = new FormData(form);
+    const res = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    const result = await res.json().catch(() => ({}));
+    document.getElementById('modalLoader').style.display = 'none';
+    if (res.ok) {
+      form.reset();
+      status.textContent = "Thanks! Your message has been sent.";
+      status.className = "form-success";
+    } else {
+      status.textContent = "Oops! There was a problem. Please try again.";
+      status.className = "form-error";
+      // Add this line:
+      console.error('Formspree error:', res.status, result);
+    }
+  } catch (err) {
+    document.getElementById('modalLoader').style.display = 'none';
+    status.textContent = "Network error. Please try again.";
+    status.className = "form-error";
+    // Add this line:
+    console.error('Network error:', err);
+  }
+  });
+  });
+</script>
+
+</body>
+</html>
